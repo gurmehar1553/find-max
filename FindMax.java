@@ -1,17 +1,13 @@
 import java.util.*;
 public class FindMax <T extends Comparable> {
-        T a,b,c;
-        public FindMax(T a,T b,T c){
-            this.a = a;
-            this.b = b;
-            this.c = c;
+        List<T> a=new ArrayList<>();
+        public FindMax(T... a){
+            Collections.addAll(this.a,a);
         }
         public static void main(String[] args){
             Scanner sc = new Scanner(System.in);
-            Integer a = sc.nextInt();
-            Integer b = sc.nextInt();
-            Integer c = sc.nextInt();
-            new FindMax<Integer>(a,b,c).findMax();
+            Integer a1 = 10,a2 = 20,a3 = 30,a4 =50;
+            new FindMax<Integer>(a1,a2,a3,a4).findMax();
 
             Float f1 = sc.nextFloat();
             Float f2 = sc.nextFloat();
@@ -24,10 +20,10 @@ public class FindMax <T extends Comparable> {
             new FindMax<String>(s1,s2,s3).findMax();
         }
         private void findMax(){
-            findMaxMultiple(a,b,c);
+            findMaxMultiple(a);
         }
-        public <T extends Comparable> void findMaxMultiple(T... a){
-            T maxEle = a[0];
+        public <T extends Comparable> void findMaxMultiple(List<T> a){
+            T maxEle = a.get(0);
             for(T ele: a){
                 if(maxEle.compareTo(ele) < 0){
                     maxEle = ele;
