@@ -11,6 +11,21 @@ public class FindMax {
             Float f2 = sc.nextFloat();
             Float f3 = sc.nextFloat();
             findFloatMax(f1,f2,f3);
+
+            String s1 = sc.next();
+            String s2 = sc.next();
+            String s3 = sc.next();
+            findStringMax(s1,s2,s3);
+        }
+        public static void findStringMax(String a,String b,String c){
+            String max = a;
+            if(max.compareTo(b) < 0){
+                max = b;
+            }
+            if(max.compareTo(c) < 0){
+                max = c;
+            }
+            System.out.println(max);
         }
         public static void findFloatMax(Float a,Float b,Float c){
             Float maxFLoat = a;
