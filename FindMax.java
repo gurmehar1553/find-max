@@ -24,16 +24,15 @@ public class FindMax <T extends Comparable> {
             new FindMax<String>(s1,s2,s3).findMax();
         }
         private void findMax(){
-            findMax(a,b,c);
+            findMaxMultiple(a,b,c);
         }
-        public <T extends Comparable> void findMax(T a,T b,T c){
-            T ans = a;
-            if(ans.compareTo(b) < 0){
-                ans = b;
+        public <T extends Comparable> void findMaxMultiple(T... a){
+            T maxEle = a[0];
+            for(T ele: a){
+                if(maxEle.compareTo(ele) < 0){
+                    maxEle = ele;
+                }
             }
-            if(ans.compareTo(c) < 0){
-                ans = c;
-            }
-            System.out.println(ans);
+            System.out.println(maxEle);
         }
 }
